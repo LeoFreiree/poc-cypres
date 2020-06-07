@@ -1,0 +1,23 @@
+{
+  "name": "poc-cypres",
+  "version": "1.0.0",
+  "description": "Cypress -v : 4.7.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoFreiree/poc-cypres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoFreiree/poc-cypres/issues"
+  },
+  "homepage": "https://github.com/LeoFreiree/poc-cypres#readme",
+  "devDependencies": {
+    "cypress": "^4.7.0"
+  }
+}
