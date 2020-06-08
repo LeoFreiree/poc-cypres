@@ -1,20 +1,19 @@
 /// <reference types="cypress" />
 
-const urlModal = Cypress.env('urlModal');
-const ddd = Cypress.env('ddd');
-const telefone = Cypress.env('telefone');
-const email = Cypress.env('email');
-const sms = Cypress.env('sms');
+import {getDados} from '../support/util/getdados';
+
+
+const dados = getDados();
 
 context('Suite de teste do Tim Pre', () => {
     
-    describe.only('Fluxo Tim Pre TOP', () => {
+    describe('Fluxo Tim Pre TOP', () => {
         
         before(() => {
 
           const sku =  'SVAP027RJ';           
-          cy.visit(urlModal + sku);
-          console.log("acessando a pagina: " + urlModal + sku)
+          cy.visit(dados.urlModal + sku);
+          console.log("acessando a pagina: " + dados.urlModal + sku)
 
         });
 
@@ -24,19 +23,19 @@ context('Suite de teste do Tim Pre', () => {
 
         it('Preenchendo dados', () => {
 
-          cy.Preenchedados(ddd,telefone,email);
+          cy.Preenchedados(dados.ddd,dados.telefone,dados.email);
 
         });
 
         it('Validando tela de SMS', () => {
 
-          cy.ValidaTelaSMS(ddd,telefone);
+          cy.ValidaTelaSMS(dados.ddd,dados.telefone);
 
         });
 
         it('Preenchendo código SMS', () => {
 
-          cy.PreencheSMS(sms);
+          cy.PreencheSMS(dados.sms);
          
         });  
       
