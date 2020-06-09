@@ -14,13 +14,26 @@ context('Suite de teste do Tim Pre', () => {
 
         });
 
-        it.only('Validando a LP', () =>{
+        it('Validando a LP', () =>{
             
-            cy.contains('p', 'Aproveite todas as vantagens de ser TIM Pré Top')
-            
-          })
+            cy.get('div.price-bar-module--priceBar--1IOC_')
+            .contains('p','Aproveite todas as vantagens de ser TIM Pré Top').should('be.visible');
 
-        it('Validando a tela de ativação', () =>{
+            cy.get('li.price-bar-module--item--3ljpg')
+            .first().should('have.text', 'R$10')
+            .next().should('have.text', 'R$15')
+            .next().should('have.text', 'R$20')
+            .next().should('have.text', 'R$30')
+            .next().should('have.text', 'R$40')
+            .next().should('have.text', 'R$50')
+            .next().should('have.text', 'R$60')
+            .next().should('have.text', 'R$100');
+            
+            
+            
+          });
+
+        /* it('Validando a tela de ativação', () =>{
 
             cy.ValidaTelaAtivação();
         });
@@ -47,7 +60,7 @@ context('Suite de teste do Tim Pre', () => {
 
             cy.ValidaParabens();
 
-        });  
+        });   */
     });
 
 })
