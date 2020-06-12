@@ -6,31 +6,26 @@ const dados = getDados();
 
 context('Suite de teste do Tim Pre', () => {
     
-    describe('Fluxo Tim Pre TOP', () => {
+    describe('Fluxo Tim Pre TOP R$10', () => {
         
         before(() => {
 
             cy.visit("/");
+            cy.title().should('eq', 'TIM Pré Top - Contratar agora');
 
-        });
+        })
 
-        it('Validando a LP', () =>{
+        it('Validando a descrição da  LP', () =>{
             
             cy.get('div.price-bar-module--priceBar--1IOC_')
             .contains('p','Aproveite todas as vantagens de ser TIM Pré Top').should('be.visible');
+           
+        });
+        
+        it('Validando a escolha do plano', () =>{
 
-            cy.get('li.price-bar-module--item--3ljpg')
-            .first().should('have.text', 'R$10')
-            .next().should('have.text', 'R$15')
-            .next().should('have.text', 'R$20')
-            .next().should('have.text', 'R$30')
-            .next().should('have.text', 'R$40')
-            .next().should('have.text', 'R$50')
-            .next().should('have.text', 'R$60')
-            .next().should('have.text', 'R$100');
-            
-            
-            
+            cy.ValidaPlanosLP("R$15"); // Verifica se todos os planos estão disponiveis e valida os dados/informações do plano escolhido
+           
           });
 
         /* it('Validando a tela de ativação', () =>{
