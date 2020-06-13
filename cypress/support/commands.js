@@ -1,3 +1,6 @@
+import 'cypress-iframe';
+///<reference types="cypress-iframe" />
+
 Cypress.Commands.add("ValidaTelaAtivação", () => {
 
     cy.contains('h1','Ative agora seuTIM Pré TOP NACIONAL')
@@ -158,4 +161,16 @@ Cypress.Commands.add("ValidaPlanosLP", (plano) => {
     cy.get('button').contains('Contratar agora').click();
 
 });
+
+/* Cypress.Commands.add('getIframe', (frame) => {
+    // get the iframe > document > body
+    // and retry until the body element is not empty
+    return cy
+    .get(frame)
+    .its('0.contentDocument.body').should('not.be.empty')
+    // wraps "body" DOM element to allow
+    // chaining more Cypress commands, like ".find(...)"
+    // https://on.cypress.io/wrap
+    .then(cy.wrap)
+  }) */
  
