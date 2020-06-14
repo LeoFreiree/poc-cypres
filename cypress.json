@@ -1,4 +1,7 @@
 {
-    "defaultCommandTimeout": 8000,
+    "chromeWebSecurity": false,
+    "viewportWidth": 1280,
+    "viewportHeight": 1024,
+    "defaultCommandTimeout": 30000,
     "baseUrl": "https://timpre.tim.com.br/"
 }
