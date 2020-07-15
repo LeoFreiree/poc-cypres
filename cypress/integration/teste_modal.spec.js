@@ -5,7 +5,7 @@ import {getDados} from '../support/util/getdados';
 
 const dados = getDados();
 
-context('Suite de teste do Tim Pre', () => {
+context('Suite de teste do Tim Pre Modal', () => {
     
     describe('Fluxo Tim Pre TOP', () => {
         
